@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <title>Asadullah Khan | Freelance Web Developer</title>
+  <meta name="description" content="Freelance web developer building fast, responsive, and modern websites for businesses and startups." />
+  
+  <!-- Copy the CSS from above here -->
+  <style>
+   <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+
+  /* ========================================
+     SUNSET GLOW COLOR SCHEME
+     Primary: #ff6b6b (coral red)
+     Secondary: #ffd93d (golden yellow)
+     Accent: #ff8c42 (orange)
+     Background: #fffbf0 (cream)
+     Dark: #2d3436
+     ======================================== */
+
+  body {
+    background: #fffbf0;
+    color: #2d3436;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ========================================
+     HEADER / HERO SECTION
+     ======================================== */
+
+  header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8c42 50%, #ffd93d 100%);
+    background-size: 200% 200%;
+    animation: sunsetPulse 8s ease infinite;
+    color: #ffffff;
+    padding: 90px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+  }
+
+  @keyframes sunsetPulse {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  header h1 {
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(45, 52, 54, 0.3);
+    animation: fadeInDown 1s ease;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  header p {
+    margin-top: 14px;
+    font-size: 18px;
+    color: #fffbf0;
+    text-shadow: 0 2px 8px rgba(45, 52, 54, 0.2);
+    animation: fadeInUp 1s ease 0.2s both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  header a {
+    display: inline-block;
+    margin-top: 24px;
+    background: #ffffff;
+    color: #ff6b6b;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+    border: 3px solid transparent;
+    animation: fadeInUp 1s ease 0.4s both;
+  }
+
+  header a:hover {
+    background: #2d3436;
+    color: #ffd93d;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(45, 52, 54, 0.4);
+    border-color: #ffd93d;
+  }
+
+  /* ========================================
+     SECTIONS
+     ======================================== */
+
+  section {
+    padding: 70px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+    color: #ff6b6b;
+    font-size: 28px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    border-bottom: 4px solid #ffd93d;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h2::after {
+    content: '●';
+    color: #ff8c42;
+    margin-left: 10px;
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ========================================
+     ABOUT SECTION
+     ======================================== */
+
+  .about p {
+    max-width: 760px;
+    font-size: 17px;
+    color: #2d3436;
+    line-height: 1.8;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.1);
+    border-left: 6px solid #ff8c42;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  /* ========================================
+     GRID LAYOUTS (Services, Skills, Why Hire)
+     ======================================== */
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 5px solid #ff8c42;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    color: #2d3436;
+    cursor: pointer;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 211, 61, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .card:hover::before {
+    left: 100%;
+  }
+
+  .card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 20px 45px rgba(255, 107, 107, 0.3);
+    border-top-color: #ffd93d;
+    background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+  }
+
+  /* ========================================
+     PROJECTS SECTION
+     ======================================== */
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .project-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.15);
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+  }
+
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(255, 140, 66, 0.3);
+    border-color: #ff8c42;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.1) saturate(1.2);
+  }
+
+  .project-card h3 {
+    margin: 16px 20px 8px;
+    color: #ff6b6b;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .project-card p {
+    color: #2d3436;
+    padding: 0 20px 20px;
+    line-height: 1.6;
+  }
+
+  /* ========================================
+     CONTACT SECTION
+     ======================================== */
+
+.contact-form {
+  max-width: 520px;
+  width: 100%;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.2);
+  border: 3px solid #ffd93d;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 40px auto;
+  box-sizing: border-box; /* Important! */
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  height: 6px;
+  background: linear-gradient(90deg, #ff6b6b, #ff8c42, #ffd93d);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  margin-left: 0; /* Remove any left margin */
+  margin-right: 0; /* Remove any right margin */
+  border-radius: 12px;
+  border: 2px solid #ffe5a0;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fffbf0;
+  color: #2d3436;
+  font-family: inherit;
+  box-sizing: border-box; /* Critical for proper sizing */
+  display: block; /* Ensure block-level element */
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: #ffd93d;
+  background: #ffffff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff8c42;
+  box-shadow: 0 0 0 4px rgba(255, 140, 66, 0.1);
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 16px;
+  margin: 0; /* Remove any margins */
+  background: linear-gradient(135deg, #ff6b6b, #ff8c42);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: block;
+}
+
+.contact-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ff8c42, #ffd93d);
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.contact-form button:hover::before {
+  left: 0;
+}
+
+.contact-form button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(255, 140, 66, 0.5);
+}
+
+.contact-form button span {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+  /* Contact Info Cards */
+  .contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 900px;
+}
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.12);
+    transition: all 0.3s ease;
+    border-left: 5px solid #ff8c42;
+  }
+
+  .contact-item:hover {
+    transform: translateX(8px) translateY(-4px);
+    box-shadow: 0 15px 35px rgba(255, 140, 66, 0.25);
+    border-left-color: #ffd93d;
+    background: linear-gradient(135deg, #ffffff 0%, #fff9e6 100%);
+  }
+
+  .contact-icon {
+    font-size: 32px;
+    line-height: 1;
+    animation: bounce 2s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .contact-item:hover .contact-icon {
+    animation: spin 0.6s ease;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .contact-item strong {
+    display: block;
+    color: #ff6b6b;
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #2d3436;
+  }
+
+  .contact-item a {
+    color: #ff8c42;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+  }
+
+  .contact-item a:hover {
+    color: #ff6b6b;
+    text-decoration: underline;
+  }
+
+  /* ========================================
+     FOOTER
+     ======================================== */
+
+  footer {
+    background: linear-gradient(135deg, #2d3436 0%, #1e272e 100%);
+    color: #ffd93d;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 5px solid #ff8c42;
+    position: relative;
+    overflow: hidden;
+  }
+
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 211, 61, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  footer p {
+    transition: color 0.3s ease;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p:hover {
+    color: #ff8c42;
+    transform: scale(1.05);
+  }
+
+  footer a {
+    color: #ff8c42;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer a:hover {
+    color: #ffd93d;
+    text-decoration: underline;
+  }
+
+  /* ========================================
+     RESPONSIVE MEDIA QUERIES
+     ======================================== */
+
+  /* Prevent horizontal scroll */
+  section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Large Tablets (1024px) */
+  @media (max-width: 1024px) {
+    header { padding: 70px 20px; }
+    header h1 { font-size: 36px; }
+    section { padding: 60px 20px; }
+  }
+
+  /* Tablets (768px) */
+  @media (max-width: 768px) {
+    header { padding: 60px 15px; }
+    header h1 { font-size: 32px; }
+    header p { font-size: 16px; }
+    header a { padding: 12px 24px; }
+    
+    section { padding: 50px 15px; }
+    h2 { font-size: 26px; }
+    
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .projects { grid-template-columns: 1fr; gap: 20px; }
+    .contact-info { grid-template-columns: 1fr; }
+    
+    /* Better touch targets */
+    a, button { min-height: 44px; }
+
+    .card:hover {
+      transform: translateY(-6px) rotate(0deg);
+    }
+  }
+
+  /* Mobile (480px) */
+  @media (max-width: 480px) {
+    header { padding: 40px 12px; }
+    header h1 { font-size: 26px; }
+    header p { font-size: 14px; }
+    header a { padding: 12px 24px; }
+    
+    section { padding: 35px 12px; }
+    h2 { font-size: 22px; }
+    
+    .grid { grid-template-columns: 1fr; gap: 12px; }
+    .card { padding: 18px; }
+    
+    .about p { padding: 20px; }
+    
+    .contact-form { padding: 24px; }
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 16px; /* Prevents iOS zoom */
+    }
+
+    .contact-item {
+      padding: 18px;
+    }
+
+    .contact-icon {
+      font-size: 28px;
+    }
+  }
+
+  /* Landscape mobile fix */
+  @media (max-height: 500px) and (orientation: landscape) {
+    header { padding: 30px 15px; }
+    section { padding: 30px 15px; }
+  }
+
+  /* Reduce animations on mobile for performance */
+  @media (max-width: 768px) {
+    * {
+      animation-duration: 0.5s !important;
+    }
+  }
+
+</style>
+</style>
+  </style>
+
+</head>
+<body>
+
+  <!-- HERO / HEADER -->
+  <header>
+    <h1>Asadullah Khan</h1>
+    <p>Freelance Frontend Web Developer | HTML • CSS • JavaScript</p>
+    <a href="#contact">Hire Me</a>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      I help small businesses, startups, and individuals build fast, responsive, and modern websites
+      that look professional and work smoothly on all devices. My focus is clean design, clear layout,
+      and user-friendly interfaces that help clients grow their online presence.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">Responsive Website Development</div>
+      <div class="card">Landing Page Design</div>
+      <div class="card">Website Redesign & UI Fixes</div>
+      <div class="card">Bug Fixing & Performance Improvements</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills & Tools</h2>
+    <div class="grid">
+      <div class="card">HTML5</div>
+      <div class="card">CSS3</div>
+      <div class="card">JavaScript</div>
+      <div class="card">Bootstrap</div>
+      <div class="card">Git & GitHub</div>
+      <div class="card">Figma / Canva</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card project-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" 
+             alt="Business Website Dashboard" 
+             loading="lazy" />
+        <h3>Business Website</h3>
+        <p>Designed and developed a clean, responsive business website focused on clarity and trust.</p>
+      </div>
+      <div class="card project-card">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=500&fit=crop" 
+             alt="High-Converting Landing Page" 
+             loading="lazy" />
+        <h3>High-Converting Landing Page</h3>
+        <p>Modern landing page layout designed to capture leads and improve user engagement.</p>
+      </div>
+      <div class="card project-card">
+        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=500&fit=crop" 
+             alt="Personal Portfolio Website" 
+             loading="lazy" />
+        <h3>Personal Portfolio</h3>
+        <p>Professional portfolio website to showcase services, skills, and previous work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY HIRE ME -->
+  <section>
+    <h2>Why Hire Me?</h2>
+    <div class="grid">
+      <div class="card">Clear communication & quick response</div>
+      <div class="card">Clean, professional, and responsive designs</div>
+      <div class="card">On-time delivery</div>
+      <div class="card">Client satisfaction focused work</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p style="margin-bottom: 20px; color:#240046;">Have a project in mind? Send me a message and I'll get back to you quickly.</p>
+
+    <form class="contact-form" action="https://formsubmit.co/YOUR_EMAIL@email.com" >
+      <!-- FormSubmit Configuration -->
+      <input type="hidden" name="_subject" value="New Portfolio Contact!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      
+      <!-- Form Fields -->
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="tel" name="phone" placeholder="Your Phone (Optional)" />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <span class="contact-icon">📧</span>
+        <div>
+          <strong>Email</strong>
+          <p><a href="mailto:YOUR_EMAIL@email.com">YOUR_EMAIL@email.com</a></p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="contact-icon">💬</span>
+        <div>
+          <strong>WhatsApp</strong>
+          <p><a href="https://wa.me/92XXXXXXXXXX?text=Hi%20Asadullah,%20I%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener">+92-XXX-XXXXXXX</a></p>
+        </div>
+      </div>
+      
+      <div class="contact-item">
+        <span class="contact-icon">🐙</span>
+        <div>
+          <strong>GitHub</strong>
+          <p><a href="https://github.com/asadkhan05-web" target="_blank" rel="noopener">@asadkhan05-web</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Asadullah Khan | Freelance Web Developer</p>
+  </footer>
+
+  <!-- Loading State Script -->
+  <script>
+    const contactForm = document.querySelector('.contact-form');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
+    contactForm.addEventListener('submit', function() {
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      submitBtn.style.cursor = 'not-allowed';
+    });
+  </script>
+
+</body>
+</html>
